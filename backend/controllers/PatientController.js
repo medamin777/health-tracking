@@ -27,7 +27,6 @@ async function sendPasswordByEmail(email,firstName,password)
         console.log(`failed to send email ${email}`,error);
         throw new Error("failed to send email ");
     }
-    
 }
 exports.createPatient=async(req,res)=>{
     const {date_of_birth,gender,phone_number,email,firstName,lastName}=req.body;

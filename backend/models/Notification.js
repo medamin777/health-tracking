@@ -1,12 +1,13 @@
 const mongoose=require("mongoose");
+const User = require("./User");
 const notificationSchema=new mongoose.Schema({
-    patient:
-    {
+
+    sender:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:"Patient",
+        ref:"User",
         required:true
     },
-    doctor:{
+    receiver:{
         type:mongoose.Schema.Types.ObjectId,
         ref:"User",
         required:true

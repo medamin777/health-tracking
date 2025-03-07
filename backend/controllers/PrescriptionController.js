@@ -15,8 +15,8 @@ exports.createPrescription=async(req,res)=>{
         });
     await prescription.save();
     const notification=new Notification({
-        patient,
-        doctor:doctorId,
+        sender:doctorId,
+        receiver:patient.user,
         message:`new prescription created ${medication}`
     })
     await notification.save();
@@ -50,8 +50,7 @@ exports.getPrescriptionForPatient=async(req,res)=>{
         res.status(500).json({error:"failed to retrive prescriptions"})
     }
 }
-//get all prescriptions for a patient 
-
+//get all prescriptions for a patient
 exports.updatePrescriptionForPatient=async(req,res)=>{
 
     const {id}=req.params;

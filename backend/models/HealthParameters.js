@@ -8,7 +8,7 @@ const HealthParameterSchema=new mongoose.Schema({
     },
     timestamp:{
         type:Date,
-        defautl:Date.now
+        default:Date.now
     },
     heart_rate:{
         type:Number,

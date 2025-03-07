@@ -5,5 +5,5 @@ const router=express.Router();
 const healthController=require("../controllers/HealthController");
 
 //route to add health parameters
-router.post("/",authenticatejwt,healthController.createHealthParameter)
+router.post("/",authenticatejwt,healthController.addHealthParameter)
 module.exports=router;
